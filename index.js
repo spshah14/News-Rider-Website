@@ -10,7 +10,7 @@ const xhr = new XMLHttpRequest();
 xhr.open("GET", `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${api}`, true);
 
 xhr.onload = function () {
-    if (this.status === 200) {
+    if (this.status == 200) {
         let json = JSON.parse(this.responseText);
         let articles = json.articles;
         // console.log(articles);
