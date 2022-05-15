@@ -11,3 +11,8 @@ body{
 .top{
     color: white;
 }
+.btnClass{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

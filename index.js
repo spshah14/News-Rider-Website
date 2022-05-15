@@ -24,9 +24,9 @@ xhr.onload = function () {
 
             let news = `<div class="accordion-item my-5 newsCard rounded border border-3 border-primary">
             <h2 class="accordion-header" id="heading${index}">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index}"
+                <button class="accordion-button collapsed btnClass" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index}"
                     aria-expanded="true" aria-controls="collapse${index}">
-                    <b>Breaking News ${index + 1}:</b><pre> </pre>  ${element["title"]}
+                    <b>Breaking News ${index + 1}:</b><br>  ${element["title"]}
                 </button>
             </h2>
             <div id="collapse${index}" class="accordion-collapse collapse" aria-labelledby="heading${index}"
