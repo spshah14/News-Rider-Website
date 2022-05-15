@@ -16,6 +16,8 @@ xhr.onload = function () {
         // console.log(articles);
         let newsHtml = "";
         articles.forEach(function (element, index) {
+
+
             let news = `<div class="accordion-item my-5 newsCard rounded border border-3 border-primary">
             <h2 class="accordion-header" id="heading${index}">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index}"
@@ -26,7 +28,10 @@ xhr.onload = function () {
             <div id="collapse${index}" class="accordion-collapse collapse" aria-labelledby="heading${index}"
                 data-bs-parent="#newsAccordion">
                 <div class="accordion-body" id="cardTxt">
-                    ${element["content"]}. <a href="${element['url']}" target="_blank" >Read more here</a>
+                
+                <b>About: </b>${element["description"]}.<br><br>
+                ${element["content"]}. <a href="${element['url']}" target="_blank" >Read more here</a>
+
                 </div>
             </div>
         </div>`
