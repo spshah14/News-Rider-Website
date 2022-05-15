@@ -1,0 +1,13 @@
+body{
+    background: url(img.jpg);
+}
+
+.marq{
+    font-size: 25px;
+    margin-top: 10px;
+    color: #ffa600;
+    margin-left: 20%;
+}
+.top{
+    color: white;
+}
