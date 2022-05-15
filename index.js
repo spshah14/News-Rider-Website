@@ -1,13 +1,17 @@
 // console.log("This is news website");
 // 0962d7d242ad42749ebb3e0f6231a2bd
 // GET https://newsapi.org/v2/top-headlines/sources?apiKey=API_KEY
-
+// 7d1ca91b0a5ed71f46d65bd1c62e4f1b
+// https://gnews.io/api/v4/top-headlines?token=7d1ca91b0a5ed71f46d65bd1c62e4f1b&lang=en&country=in
 let newsAccordion = document.getElementById("newsAccordion");
+// let country = 'in';
+// let newsApi = "0962d7d242ad42749ebb3e0f6231a2bd";
 let country = 'in';
-let api = "0962d7d242ad42749ebb3e0f6231a2bd";
+let api = "7d1ca91b0a5ed71f46d65bd1c62e4f1b";
 
 const xhr = new XMLHttpRequest();
-xhr.open("GET", `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${api}`, true);
+// xhr.open("GET", `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${newsApi}`, true);
+xhr.open("GET", `https://gnews.io/api/v4/top-headlines?token=${api}&lang=en&country=${country}`, true);
 
 xhr.onload = function () {
     if (this.status == 200) {
@@ -22,7 +26,7 @@ xhr.onload = function () {
             <h2 class="accordion-header" id="heading${index}">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index}"
                     aria-expanded="true" aria-controls="collapse${index}">
-                    <b>Breaking News ${index + 1}:</b> ${element["title"]}
+                    <b>Breaking News ${index + 1}:</b><pre> </pre>  ${element["title"]}
                 </button>
             </h2>
             <div id="collapse${index}" class="accordion-collapse collapse" aria-labelledby="heading${index}"
@@ -30,7 +34,7 @@ xhr.onload = function () {
                 <div class="accordion-body" id="cardTxt">
                 
                 <b>About: </b>${element["description"]}.<br><br>
-                ${element["content"]}. <a href="${element['url']}" target="_blank" >Read more here</a>
+                ${element["content"]}. <a href="${element['url']}" target="_blank" >Read more here...</a>
 
                 </div>
             </div>
